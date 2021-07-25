@@ -7,6 +7,9 @@ set -e
 # external links outside of your domain then feel free remove this line.
 rm -rf public/*.* public/assets public/packs
 
+# Remove a potentially pre-existing server.pid for Rails.
+rm -f /app/tmp/pids/server.pid
+
 # Always keep this here as it ensures the built and digested assets get copied
 # into the correct location. This avoids them getting clobbered by any volumes.
 cp -a /public /app
