@@ -25,6 +25,13 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Execute jobs in the background. Read more: https://github.com/mperham/sidekiq
 gem 'sidekiq', '~> 6.2.1'
 
+gem 'spree', '~> 4.2'
+gem 'spree_auth_devise', '~> 4.3'
+gem 'spree_gateway', '~> 3.9'
+gem 'spree_i18n', '~> 5.0'
+
+gem 'mini_racer', '~> 0.1.9'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
