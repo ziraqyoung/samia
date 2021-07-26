@@ -119,7 +119,11 @@ function ci:test {
     -e PGPASSWORD=${POSTGRES_PASSWORD} postgres \
     psql -U ${POSTGRES_USER} ${POSTGRES_USER} -c 'SELECT 1'"
 
-  rails db:setup
+  # create the database
+  rails db:create
+
+  # run the migrations
+  rails db:migrate
 
   # Since we're running tests in CI without volumes and Rails needs the packs
   # to exist when running tests, we need to run our tests from the webpacker
