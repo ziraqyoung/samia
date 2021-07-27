@@ -4,7 +4,7 @@ LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 WORKDIR /app
 
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends build-essential curl git libpq-dev \
+  && apt-get install -y --no-install-recommends build-essential curl git imagemagick libpq-dev \
   && curl -sSL https://deb.nodesource.com/setup_14.x | bash - \
   && curl -sSL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
   && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
@@ -44,7 +44,7 @@ LABEL maintainer="Nick Janetakis <nick.janetakis@gmail.com>"
 WORKDIR /app
 
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends build-essential curl libpq-dev \
+  && apt-get install -y --no-install-recommends build-essential imagemagick curl libpq-dev \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man \
   && apt-get clean \
   && useradd --create-home ruby \
