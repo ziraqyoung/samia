@@ -24,6 +24,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 # Execute jobs in the background. Read more: https://github.com/mperham/sidekiq
 gem 'sidekiq', '~> 6.2.1'
+gem 'heroicon', '~> 0.3.0'
 
 
 gem 'mini_racer'
