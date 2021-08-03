@@ -1,6 +1,6 @@
 default:
   navigation:
-    - title: Interior Accessories
+    - title: Interior
       subtitle: Categories
       url: /t/categories/interior
       items:
@@ -27,7 +27,7 @@ default:
           title: Get up to 30% off
           url: /t/special-offers/30-percent-off
           image: 'meganav/promo_banner_right-first-category.jpg'
-    - title: Exterior Accessories
+    - title: Exterior
       subtitle: Categories
       url: /t/categories/exterior
       items:
