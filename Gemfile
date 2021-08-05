@@ -52,6 +52,14 @@ group :test do
   gem 'webdrivers'
   # Required for Ruby 3+
   gem 'rexml', '~> 3.2'
+   # Bring `assert_template` & `assign`
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
+  # pretty minitest ouput
+  gem 'minitest', '~> 5.14', '>= 5.14.4'
+  gem 'minitest-reporters', '~> 1.4', '>= 1.4.3'
+  # Automated testing upon file change
+  gem 'guard', '~> 2.17'
+  gem 'guard-minitest', '~> 2.4', '>= 2.4.6'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
