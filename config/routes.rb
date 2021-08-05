@@ -1,18 +1,4 @@
 Rails.application.routes.draw do
-  # This line mounts Spree's routes at the root of your application.
-  # This means, any requests to URLs such as /products, will go to
-  # Spree::ProductsController.
-  # If you would like to change where this engine is mounted, simply change the
-  # :at option to something different.
-  #
-  # We ask that you don't use the :as option here, as Spree relies on it being
-  # the default of "spree".
-  mount Spree::Core::Engine, at: '/'
-
-  scope controller: :pages do
-    get :up
-  end
-
   # Sidekiq has a web dashboard which you can enable below. It's turned off by
   # default because you very likely wouldn't want this to be available to
   # everyone in production.
