@@ -16,3 +16,4 @@ const context = require.context("../controllers", true, /\.js$/)
 Rails.start()
 ActiveStorage.start()
 application.load(definitionsFromContext(context))
+

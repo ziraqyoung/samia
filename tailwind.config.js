@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   mode: "jit",
   purge: {
@@ -7,5 +9,14 @@ module.exports = {
       "./app/helpers/**/*.rb",
       "./app/packs/**/*.js",
     ]
-  }
+  },
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [
+    require('tailwindcss-rtl'),
+  ]
 };
