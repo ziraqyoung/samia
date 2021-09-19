@@ -1,31 +1,28 @@
 <%# leaving #spree-header div for legacy support  %>
 <% cache spree_nav_cache_key('header') do %>
-  <div id="spree-header" data-turbo-permanent>
-    <header id="siteHeader" class="z-20 w-full h-16 sm:h-20 lg:h-24">
-      <div class="z-20 w-full h-16 text-gray-700 bg-white innerSticky body-font sm:h-20 lg:h-24 ps-4 md:ps-0 lg:ps-6 pe-4 lg:pe-6 transition duration-200 ease-in-out">
-        <div class="flex items-center justify-center mx-auto h-full w-full max-w-[1920px]">
+  <header id="siteHeader" class="z-20 w-full h-16 sm:h-20 lg:h-24" data-turbo-permanent>
+    <div class="z-20 w-full h-16 text-gray-700 bg-white innerSticky body-font sm:h-20 lg:h-24 ps-4 md:ps-0 lg:ps-6 pe-4 lg:pe-6 transition duration-200 ease-in-out">
+      <div class="flex items-center justify-center mx-auto h-full w-full max-w-[1920px]">
 
-          <button aria-label="Menu" class="menuBtn">
-            <%= heroicon 'menu-alt-1', variant: :outline, options: { class: 'h-8 w-8' } %>
-          </button>
+        <button aria-label="Menu" class="menuBtn">
+          <%= heroicon 'menu-alt-1', variant: :outline, options: { class: 'h-8 w-8' } %>
+        </button>
 
+        <figure class="inline-flex w-[95px] h-auto focus:outline-none">
+          <%= logo %>
+        </figure>
 
-          <figure class="inline-flex w-[95px] h-auto focus:outline-none">
-            <%= logo %>
-          </figure>
-
-          <nav id="main-nav-bar" role="navigation" aria-label="<%= Spree.t('nav_bar.desktop') %>" class="relative flex hidden w-full lg:flex md:ms-6 xl:ms-10">
-            <%= render partial: 'spree/shared/main_nav_bar' %>
-          </div>
-
-          <div id="top-nav-bar" class="items-center justify-end flex-shrink-0 hidden md:flex space-s-6 lg:space-s-5 xl:space-s-8 2xl:space-s-10 ms-auto">
-            <%= render partial: 'spree/shared/nav_bar' %>
-          </div>
-
-          <%# render partial: 'spree/shared/mobile_navigation' %>
-
-        </div>
+        <nav id="main-nav-bar" role="navigation" aria-label="<%= Spree.t('nav_bar.desktop') %>" class="relative flex hidden w-full lg:flex md:ms-6 xl:ms-10">
+          <%= render partial: 'spree/shared/main_nav_bar' %>
       </div>
-    </header>
-  </div>
+
+      <div id="top-nav-bar" class="items-center justify-end flex-shrink-0 hidden md:flex space-s-6 lg:space-s-5 xl:space-s-8 2xl:space-s-10 ms-auto">
+        <%= render partial: 'spree/shared/nav_bar' %>
+      </div>
+
+      <%# render partial: 'spree/shared/mobile_navigation' %>
+
+    </div>
+    </div>
+  </header>
 <% end %>

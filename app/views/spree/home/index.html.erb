@@ -1,20 +1,31 @@
 <% @body_id = 'home' %>
 
-<div class="homepage-hero-image mb-3 position-relative">
-  <img class="lazyload hero-image position-absolute"
-    data-src="<%= asset_path('homepage/main_banner.jpg') %>"
-    data-srcset="<%= image_source_set('homepage/main_banner') %>"
-    alt="Summer Collection">
+<div class="mb-12 grid grid-col-2 max-w-[1920px] mx-auto">
+
+  <div class="mx-auto col-span-full">
+    <%= link_to nil, class: "h-full group flex justify-center relative overflow-hidden" do %>
+      <div class="relative inline-block max-w-full m-0 overflow-hidden box-border">
+        <img class="object-cover w-full bg-gray-300"
+             data-src="<%= asset_path('homepage/main_banner.jpg') %>"
+             data-srcset="<%= image_source_set('homepage/main_banner') %>"
+             alt="Exterior Accessories" />
+             <div class="absolute top-0 block w-1/2 h-full -start-full z-5 transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-40 group-hover:animate-shine"></div>
+      </div>
+    <% end %>
+
+  </div>
+
 
   <div class="hero-content">
-    <div class="homepage-hero-image-text mb-2 mx-auto pb-3 pb-md-4">
+    <div class="pb-3 mx-auto mb-2 homepage-hero-image-text pb-md-4">
       Summer Collection
     </div>
     <div>
       <%= link_to 'SHOP NOW', spree.products_path, class: 'btn btn-primary spree-btn px-5' %>
     </div>
   </div>
-</div>
+
+  </div> <!-- this should be the end -->
 
 <div class="container">
   <div class="row">
@@ -63,11 +74,11 @@
 
 <div data-product-carousel data-product-carousel-taxon-id='bestsellers' class="my-3"></div>
 
-<div class="homepage-fashion-trends-box mb-3">
+<div class="mb-3 homepage-fashion-trends-box">
   <div class="text-center">
-    <div class="homepage-fashion-trends-box-summer-text mb-1">Summer 2021</div>
-    <div class="homepage-fashion-trends-box-fashion-trends-text mb-2">FASHION TRENDS</div>
-    <div class="homepage-fashion-trends-box-description-text text-center mb-3">
+    <div class="mb-1 homepage-fashion-trends-box-summer-text">Summer 2021</div>
+    <div class="mb-2 homepage-fashion-trends-box-fashion-trends-text">FASHION TRENDS</div>
+    <div class="mb-3 text-center homepage-fashion-trends-box-description-text">
       Want to rock this season’s hottest trend in style? These are the top fashion from Summer 2020 Fashion Weeks that are coming our way this season.
     </div>
     <%= link_to 'READ MORE', spree.nested_taxons_path('trending'), class: 'btn px-5 spree-btn btn-outline-primary' %>
@@ -80,7 +91,7 @@
   <div class="row">
     <div class="col-12 col-lg-6">
       <%= link_to spree.nested_taxons_path('streetstyle') do %>
-        <div class="homepage-bottom-box text-center mb-3">
+        <div class="mb-3 text-center homepage-bottom-box">
           <img class="w-100 lazyload"
             data-src="<%= asset_path('homepage/promo_banner_left.jpg') %>"
             data-srcset="<%= image_source_set('homepage/promo_banner_left') %>"
@@ -100,7 +111,7 @@
 
     <div class="col-12 col-lg-6">
       <%= link_to spree.nested_taxons_path('summer-sale') do %>
-        <div class="homepage-bottom-box text-center mb-3">
+        <div class="mb-3 text-center homepage-bottom-box">
           <img class="w-100 lazyload"
             data-src="<%= asset_path('homepage/promo_banner_right.jpg') %>"
             data-srcset="<%= image_source_set('homepage/promo_banner_right') %>"

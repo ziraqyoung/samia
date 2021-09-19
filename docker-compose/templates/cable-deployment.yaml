@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -c
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: cable
+  name: cable
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: cable
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -c
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: cable
+    spec:
+      containers:
+        - args:
+            - puma
+            - -p
+            - "28080"
+            - cable/config.ru
+          image: cable
+          name: cable
+          ports:
+            - containerPort: 28080
+          resources: {}
+          tty: true
+          volumeMounts:
+            - mountPath: /app/public
+              name: cable-claim0
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 3
+      volumes:
+        - name: cable-claim0
+          persistentVolumeClaim:
+            claimName: cable-claim0
+status: {}
