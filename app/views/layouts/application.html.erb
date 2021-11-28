@@ -15,11 +15,9 @@
   <body class="flex flex-col justify-between min-h-screen">
     <%= render partial: 'spree/shared/header' %>
 
-    <main class="mx-auto mb-auto max-w-screen-lg">
-      <div class="relative flex-grow">
-        <%= flash_messages %>
-        <%= yield %>
-      </div>
+    <main class="relative flex-grow">
+      <%= flash_messages %>
+      <%= yield %>
     </main>
 
     <%= yield :templates %>
